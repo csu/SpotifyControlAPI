@@ -5,6 +5,7 @@
     "private": true,
     "dependencies": {
         "express": "4.x",
-        "spotify-node-applescript": "0.2.1"
+        "spotify-node-applescript": "0.2.1",
+        "body-parser": "1.x.x"
     }
 }

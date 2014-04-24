@@ -12,16 +12,17 @@ router.get('/play/:uri', function(req, res) {
     res.send(200, {reponse: "it worked!"});
 });
 
-router.get('/play', function(req, res) {
+router.post('/play', function(req, res) {
+    console.log(req.body)
     spotify.playTrack(req.body.uri, function(){});
-    res.send(200, req.body);
+    res.send(200, req.body.uri);
 });
 
 router.get('/', function(req, res) {
     res.sendfile('index.html')
 });
 
-app.use('/api', router);
+app.use('/', router);
 
 var port = 3000;
 app.listen(port);
