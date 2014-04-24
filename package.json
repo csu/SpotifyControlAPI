@@ -1,0 +1,10 @@
+{
+    "name": "SpotifyControlAPI",
+    "description": "An API for contorlling Spotify on Mac.",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "3.x",
+        "spotify-node-applescript": "0.2.1"
+    }
+}
