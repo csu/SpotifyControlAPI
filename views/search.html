@@ -13,7 +13,7 @@
                 <input type="submit" value="Find Tracks" id="findTracks" />
             </form>
         </div>
-        <ul id="recommendations">
+        <ul id="search-results">
         </ul>
     </div>
     
@@ -23,7 +23,7 @@
 
             var $context = $('#wrapper');
             var $artist = $context.find('#artist');
-            var $recommendations = $context.find('#recommendations');
+            var $search-results = $context.find('#search-results');
             var $findTracks = $context.find('#findTracks');
             var $artistSearch = $context.find('#artistSearch');
 
@@ -35,7 +35,7 @@
 
             $findTracks.click(function(e) {
               e.preventDefault();
-              $recommendations.empty();
+              $search-results.empty();
               var artist = $artist.val();
               $.getJSON("http://ws.spotify.com/search/1/track.json?q="+artist,function(result) {
                 if (result.tracks.length > 0) {
@@ -46,9 +46,9 @@
                       html+='<li><a href="/play/' + result.tracks[i].href + '">' + result.tracks[i].artists[0].name + ' - ' + result.tracks[i].name + '</a></li>';
                     }
                   }
-                  $recommendations.append(html);
+                  $search-results.append(html);
                 } else {
-                  $recommendations.append('<li>No matches returned for \'' + artist + '\'</li>');
+                  $search-results.append('<li>No matches returned for \'' + artist + '\'</li>');
                 }
               });
             });
