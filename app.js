@@ -33,7 +33,7 @@ router.post('/', function(req, res) {
 });
 
 router.get('/', function(req, res) {
-    res.render('index');
+    res.render('search');
 });
 
 app.use('/', router);
