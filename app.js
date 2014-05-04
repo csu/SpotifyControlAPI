@@ -19,24 +19,24 @@ function playSong(uri) {
 
 router.get('/play/:uri', function(req, res) {
     playSong(req.params.uri);
-    res.sendfile('redirect.html');
+    res.render('redirect');
     // res.send(200, {reponse: "it worked!"});
 });
 
 router.post('/play', function(req, res) {
     playSong(req.body.uri);
-    res.sendfile('redirect.html');
+    res.render('redirect');
     // res.send(200, {response: "now playing " + req.body.uri});
 });
 
 router.post('/', function(req, res) {
     playSong(req.body.uri);
-    res.sendfile('redirect.html');
+    res.render('redirect');
     // res.send(200, {response: "now playing " + req.body.uri});
 });
 
 router.get('/', function(req, res) {
-    res.sendfile('index.html');
+    res.render('index');
 });
 
 app.use('/', router);
